@@ -1,0 +1,386 @@
+/*ОСН НАЛАШТУВАННЯ*/
+
+:root {
+  --burgundy: #481b1b;
+  --cream: #ffe8c9;
+  --text: #481b1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--burgundy);
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site {
+  width: 100%;
+  overflow: hidden;
+  background: var(--burgundy);
+}
+
+/*НАВІГАЦІЯ ГОЛОВНИЙ ЕКРАН*/
+
+.hero {
+  min-height: 880px;
+  background: var(--burgundy);
+  padding-top: 65px;
+}
+
+.navigation {
+  min-height: 75px;
+  width: 100%;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(25px, 5vw, 85px);
+  background: var(--cream);
+}
+
+.navigation a {
+  font-family: "Days One", sans-serif;
+  font-size: clamp(16px, 2.5vw, 38px);
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.navigation a:hover {
+  opacity: 0.65;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 750px;
+  margin: 0 auto;
+  padding: 55px 6% 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-left h1 {
+  margin: 0 0 105px;
+  color: var(--cream);
+  font-family: "Sekuya", sans-serif;
+  font-size: clamp(48px, 5.2vw, 76px);
+  line-height: 1.2;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.designer-label {
+  width: fit-content;
+  max-width: 109%;
+  margin-left: -9vw;
+  padding: 20px 120px;
+  border-radius: 0 28px 28px 0;
+  background: var(--cream);
+  color: var(--burgundy);
+  font-family: "Days One", sans-serif;
+  font-size: clamp(22px, 3vw, 43px);
+  white-space: nowrap;
+}
+
+.hero-right {
+  flex: 0 1 490px;
+}
+
+.hero-right img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 65px;
+}
+
+/*ЗАГОЛОВКИ СЕКЦІЙ*/
+
+.section {
+  width: 100%;
+  background: var(--burgundy);
+  padding-bottom: 65px;
+}
+
+.section-title {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--cream);
+  text-align: center;
+}
+
+.section-title h2 {
+  margin: 0;
+  padding: 12px;
+  color: var(--burgundy);
+  font-family: "Days One", sans-serif;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 400;
+}
+
+/*ПРО СЕБЕ*/
+
+.about-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.about-text {
+  flex: 1;
+  padding: 35px 45px;
+  background: var(--cream);
+  border-radius: 40px 0 40px 40px;
+  position: relative;
+  z-index: 1;
+  margin-right: -40px;
+}
+
+.about-text p {
+  font-family: "Days One", sans-serif;
+  margin: 0;
+  font-size: clamp(18px, 2.1vw, 35px);
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+.about-photo {
+  flex: 0 1 465px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 55px;
+}
+
+/* МІЙ ШЛЯХ*/
+
+.path-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+.path-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.path-text {
+  padding: 40px 45px;
+  margin-bottom: 25px;
+  background: var(--cream);
+  border-radius: 40px;
+}
+
+.path-text p {
+  font-family: "Days One", sans-serif;
+  margin: 0;
+  font-size: clamp(18px, 2.1vw, 35px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.paintings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  padding: 15px;
+  background: var(--cream);
+  border-radius: 40px;
+}
+
+.painting img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.path-right {
+  flex: 0 1 400px;
+  padding: 20px;
+  margin-top: -10 px;
+  background: var(--cream);
+  border-radius: 55px;
+}
+
+.path-right img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+/* Плашка під дитячими малюнками */
+.path-bottom-text {
+  width: calc(100% + 80px);
+  box-sizing: border-box;
+  margin-top: 24px;
+  padding: 16px 20px;
+  background-color: #ffe8c9;
+  color: #521b1b;
+  border-radius: 28px;
+}
+
+.path-bottom-text p {
+  margin: 0;
+  font-family: "Days One", sans-serif;
+  margin: 0;
+  font-size: clamp(18px, 2.1vw, 35px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+ПОРТФОЛІО — ПОСТЕРИ SUDNO .portfolio {
+  padding-bottom: 60px;
+}
+
+.portfolio-wrapper {
+  max-width: 1280px;
+  margin: 0 auto 55px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  background: var(--cream);
+  border-radius: 35px;
+}
+
+.portfolio-item {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 565px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img,
+.portfolio-card:hover img {
+  transform: scale(1.025);
+}
+
+/*ІНШІ РОБОТИ*/
+
+.portfolio-gallery {
+  max-width: 1280px;
+  margin: 0 auto 55px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 25px;
+  background: var(--cream);
+  border-radius: 35px;
+}
+
+.portfolio-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 475px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio.coca .portfolio-card:nth-child(3) img {
+  height: 400px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+/*КОНТАКТИ*/
+
+.contacts {
+  padding-bottom: 0;
+  min-height: 650px;
+}
+
+.contacts .section-title {
+  margin-bottom: 0;
+}
+
+.contacts-container {
+  max-width: 1280px;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 90px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.contact-card {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  background: var(--cream);
+  color: var(--burgundy);
+  border-radius: 15px;
+  font-family: "Days One", sans-serif;
+  font-size: clamp(20px, 2.3vw, 36px);
+  transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
