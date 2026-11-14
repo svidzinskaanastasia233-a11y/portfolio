@@ -276,7 +276,8 @@ a {
   line-height: 1.4;
 }
 
-ПОРТФОЛІО — ПОСТЕРИ SUDNO .portfolio {
+/* ПОРТФОЛІО — ПОСТЕРИ SUDNO */
+.portfolio {
   padding-bottom: 60px;
 }
 
@@ -383,4 +384,445 @@ a {
 
 .contact-card:hover {
   transform: translateY(-5px);
+}
+
+/* =====================================
+   АДАПТИВНИЙ ДИЗАЙН
+   ===================================== */
+
+/* ПЛАНШЕТИ ТА НЕВЕЛИКІ НОУТБУКИ */
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding-top: 35px;
+  }
+
+  .hero-content {
+    min-height: auto;
+    padding: 45px 5%;
+    gap: 25px;
+  }
+
+  .hero-left h1 {
+    margin-bottom: 55px;
+    font-size: clamp(38px, 5vw, 60px);
+  }
+
+  .designer-label {
+    margin-left: -5vw;
+    padding: 18px 45px;
+    font-size: clamp(20px, 2.5vw, 30px);
+  }
+
+  .hero-right {
+    flex-basis: 42%;
+  }
+
+  .hero-right img {
+    height: 430px;
+  }
+
+  .about-content,
+  .path-content {
+    padding-left: 25px;
+    padding-right: 25px;
+    gap: 25px;
+  }
+
+  .about-photo {
+    flex-basis: 40%;
+  }
+
+  .about-photo img {
+    height: 550px;
+  }
+
+  .about-text {
+    margin-right: -20px;
+    padding: 25px;
+  }
+
+  .path-right {
+    flex-basis: 35%;
+  }
+
+  .path-right img {
+    height: 550px;
+  }
+
+  .path-text {
+    padding: 30px;
+  }
+
+  .path-bottom-text {
+    width: 100%;
+  }
+
+  .portfolio-wrapper,
+  .portfolio-gallery {
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 18px;
+  }
+
+  .portfolio-item img {
+    height: 420px;
+  }
+
+  .portfolio-card img {
+    height: 350px;
+  }
+
+  .contacts-container {
+    padding: 65px 25px;
+  }
+}
+
+/* ТЕЛЕФОНИ ТА НЕВЕЛИКІ ПЛАНШЕТИ */
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 10px;
+  }
+
+  .hero {
+    padding-top: 15px;
+  }
+
+  /* Навігація */
+
+  .navigation {
+    min-height: auto;
+    padding: 18px 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .navigation a {
+    font-size: clamp(12px, 3vw, 16px);
+  }
+
+  /* Головний екран */
+
+  .hero-content {
+    flex-direction: column;
+    padding: 35px 20px 45px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-left h1 {
+    margin: 0 0 30px;
+    font-size: clamp(34px, 9vw, 54px);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+
+  .designer-label {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 14px 25px;
+    border-radius: 20px;
+    font-size: clamp(18px, 5vw, 26px);
+    white-space: normal;
+  }
+
+  .hero-right {
+    width: 100%;
+    max-width: 420px;
+    flex: none;
+  }
+
+  .hero-right img {
+    height: 380px;
+    border-radius: 35px;
+  }
+
+  /* Заголовки секцій */
+
+  .section {
+    padding-bottom: 35px;
+  }
+
+  .section-title {
+    min-height: 65px;
+    margin-bottom: 30px;
+  }
+
+  .section-title h2 {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  /* Про себе */
+
+  .about-content {
+    flex-direction: column-reverse;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .about-text {
+    width: 100%;
+    margin: 0;
+    padding: 25px;
+    border-radius: 25px;
+  }
+
+  .about-text p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 420px;
+    flex: none;
+    margin: 0;
+  }
+
+  .about-photo img {
+    height: 420px;
+    border-radius: 30px;
+  }
+
+  /* Мій шлях */
+
+  .path-content {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 25px;
+  }
+
+  .path-left {
+    width: 100%;
+  }
+
+  .path-text {
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+  }
+
+  .path-text p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .paintings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 10px;
+    border-radius: 25px;
+  }
+
+  .painting img {
+    height: 220px;
+    border-radius: 15px;
+  }
+
+  .path-bottom-text {
+    width: 100%;
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .path-bottom-text p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .path-right {
+    width: 100%;
+    max-width: 420px;
+    flex: none;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 30px;
+  }
+
+  .path-right img {
+    height: 420px;
+    border-radius: 20px;
+  }
+
+  /* Портфоліо */
+
+  .portfolio-wrapper,
+  .portfolio-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 15px 30px;
+    padding: 10px;
+    gap: 12px;
+    border-radius: 25px;
+  }
+
+  .portfolio-item,
+  .portfolio-card {
+    border-radius: 15px;
+  }
+
+  .portfolio-item img,
+  .portfolio-card img {
+    height: 260px;
+    border-radius: 15px;
+  }
+
+  .portfolio.coca .portfolio-card:nth-child(3) img {
+    height: 260px;
+    border-radius: 15px;
+  }
+
+  /* Контакти */
+
+  .contacts {
+    min-height: auto;
+  }
+
+  .contacts-container {
+    min-height: auto;
+    padding: 35px 20px 50px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 350px;
+    align-items: center;
+    padding: 16px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+/* МАЛЕНЬКІ ТЕЛЕФОНИ */
+
+@media (max-width: 480px) {
+  .navigation {
+    gap: 10px 15px;
+  }
+
+  .navigation a {
+    font-size: 12px;
+  }
+
+  .hero-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .hero-left h1 {
+    font-size: 34px;
+  }
+
+  .hero-right img {
+    height: 300px;
+  }
+
+  .about-content,
+  .path-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about-photo img {
+    height: 330px;
+  }
+
+  .about-text,
+  .path-text {
+    padding: 20px;
+  }
+
+  .about-text p,
+  .path-text p,
+  .path-bottom-text p {
+    font-size: 15px;
+  }
+
+  .paintings {
+    grid-template-columns: 1fr;
+  }
+
+  .painting img {
+    height: 260px;
+  }
+
+  .path-right img {
+    height: 330px;
+  }
+
+  .portfolio-wrapper,
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .portfolio-item img,
+  .portfolio-card img {
+    height: 320px;
+  }
+
+  .portfolio.coca .portfolio-card:nth-child(3) img {
+    height: 320px;
+  }
+
+  .section-title {
+    min-height: 58px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .contact-card {
+    font-size: 17px;
+  }
+}
+/* МОБІЛЬНА АДАПТАЦІЯ */
+@media (max-width: 600px) {
+  .hero-right {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .hero-right img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 30px;
+  }
+  /* Дитячі малюнки та фотографії в розділ «Мій шлях» */
+  .painting img,
+  .path-right img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .portfolio-item img,
+  .portfolio-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .navigation {
+    min-height: auto;
+    padding: 15px 8px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navigation a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
 }
