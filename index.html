@@ -29,9 +29,28 @@
       property="og:image"
       content="https://svidzinskaanastasia233-a11y.github.io/portfolio/images/og-image.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Портфоліо Анастасії Свідзінської — Graphic Designer"
+    />
+    />
     <meta property="og:locale" content="uk_UA" />
-
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Svidzinska Anastasia — Graphic Designer"
+    />
+    <meta
+      name="twitter:description"
+      content="Портфоліо Анастасії Свідзінської — графічної дизайнерки."
+    />
+    <meta
+      name="twitter:image"
+      content="https://svidzinskaanastasia233-a11y.github.io/portfolio/images/og-image.png"
+    />
+
     <meta name="theme-color" content="#8B3035" />
 
     Шрифти Google Fonts
@@ -57,12 +76,21 @@
       ГОЛОВНИЙ ЕКРАН
       <section class="hero" id="home">
         <nav class="navigation">
-          <a href="#about">ПРО СЕБЕ</a>
-          <a href="#path">ШЛЯХ</a>
-          <a href="#portfolio">ПОРТФОЛІО</a>
-          <a href="#contacts">КОНТАКТИ</a>
-        </nav>
+          <button
+            class="menu-toggle"
+            aria-label="Відкрити меню"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
 
+          <div class="nav-links">
+            <a href="#about">ПРО СЕБЕ</a>
+            <a href="#path">ШЛЯХ</a>
+            <a href="#portfolio">ПОРТФОЛІО</a>
+            <a href="#contacts">КОНТАКТИ</a>
+          </div>
+        </nav>
         <div class="hero-content">
           <div class="hero-left">
             <h1>Svidzinska<br />Anastasia</h1>
@@ -238,5 +266,50 @@
         </div>
       </section>
     </main>
+    <script>
+      const menuButton = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector(".navigation");
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      menuButton.addEventListener("click", () => {
+        navigation.classList.toggle("menu-open");
+
+        const isOpen = navigation.classList.contains("menu-open");
+        menuButton.setAttribute("aria-expanded", isOpen);
+        menuButton.textContent = isOpen ? "✕" : "☰";
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navigation.classList.remove("menu-open");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.textContent = "☰";
+        });
+      });
+      // Визначення активного розділу меню
+      const sections = document.querySelectorAll("main section[id]");
+
+      function updateActiveLink() {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 150;
+
+          if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + currentSection,
+          );
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveLink);
+      updateActiveLink();
+    </script>
   </body>
 </html>

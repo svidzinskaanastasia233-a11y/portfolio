@@ -36,7 +36,7 @@ a {
 
 .site {
   width: 100%;
-  overflow: hidden;
+  overflow-x: clip;
   background: var(--burgundy);
 }
 
@@ -51,6 +51,10 @@ a {
 .navigation {
   min-height: 75px;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   padding: 15px 5%;
   display: flex;
   align-items: center;
@@ -825,4 +829,74 @@ a {
     font-size: 12px;
     white-space: nowrap;
   }
+}
+
+/* МЕНЮ НАВІГАЦІЇ */
+
+.navigation {
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(25px, 5vw, 85px);
+}
+
+.nav-links a {
+  font-family: "Days One", sans-serif;
+  font-size: clamp(16px, 2.5vw, 38px);
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--burgundy);
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* МОБІЛЬНЕ МЕНЮ */
+
+@media (max-width: 767px) {
+  .navigation {
+    justify-content: flex-end;
+    min-height: 65px;
+    padding: 10px 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--cream);
+    padding: 10px 0;
+  }
+
+  .navigation.menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+/* ПІДСВІЧУВАННЯ АКТИВНОГО РОЗДІЛУ */
+.nav-links a.active {
+  opacity: 1;
+  border-bottom: 3px solid var(--burgundy);
+  padding-bottom: 5px;
 }
